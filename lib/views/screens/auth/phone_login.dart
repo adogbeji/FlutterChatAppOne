@@ -10,9 +10,13 @@ class PhoneLogin extends StatefulWidget {
 class _PhoneLoginState extends State<PhoneLogin> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Phone Login Screen'),
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: Image.asset('assets/images/chat.png'),
+          ),
+        ],
       ),
     );
   }
