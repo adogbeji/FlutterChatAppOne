@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:chat_app/utils/constants/colors.dart';
 
+import 'package:country_code_picker/country_code_picker.dart';
+
 class PhoneLogin extends StatefulWidget {
   const PhoneLogin({super.key});
 
@@ -44,6 +46,11 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 controller: _phoneNumberController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
+                  prefixIcon: CountryCodePicker(
+                    onChanged: (value) {
+                      print(value);
+                    },
+                  ),
                   labelText: 'Enter your phone number',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
