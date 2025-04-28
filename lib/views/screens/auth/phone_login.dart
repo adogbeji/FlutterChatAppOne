@@ -18,6 +18,8 @@ class _PhoneLoginState extends State<PhoneLogin> {
   TextEditingController _phoneNumberController = TextEditingController();
   TextEditingController _otpController = TextEditingController();
 
+  String countryCode = '+91';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,8 +50,10 @@ class _PhoneLoginState extends State<PhoneLogin> {
                 decoration: InputDecoration(
                   prefixIcon: CountryCodePicker(
                     onChanged: (value) {
-                      print(value);
+                      print(value.dialCode);
+                      countryCode = value.dialCode!;
                     },
+                    initialSelection: 'IN',
                   ),
                   labelText: 'Enter your phone number',
                   border: OutlineInputBorder(
